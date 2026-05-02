@@ -3,6 +3,8 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+#include "attack.hpp"
 
 class Pokemon {
 private:
@@ -12,6 +14,7 @@ private:
     int max_hp;
     int attack;
     int defense;
+    std::vector<Attack> attacks;
 
 public:
     // Constructeur
@@ -21,6 +24,10 @@ public:
     void takeDamage(int amount);
     void heal(int amount);
     void displayStats() const;
+    
+    // Nouvelles méthodes de combat
+    void learnAttack(const Attack& attack);
+    void executeAttack(int index, Pokemon& target);
 
     // Getters
     std::string getName() const { return name; }
@@ -29,6 +36,7 @@ public:
     int getMaxHp() const { return max_hp; }
     int getAttack() const { return attack; }
     int getDefense() const { return defense; }
+    const std::vector<Attack>& getAttacks() const { return attacks; }
 };
 
 #endif // POKEMON_HPP
