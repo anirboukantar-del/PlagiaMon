@@ -1,12 +1,21 @@
 #include <iostream>
+#include "../include/pokemon.hpp"
 
 int main() {
-    std::cout << "==========================================" << std::endl;
-    std::cout << "Bienvenue dans le clone Pokemon AI (C++20)" << std::endl;
-    std::cout << "==========================================" << std::endl;
+    std::cout << "==========================================\n";
+    std::cout << "Bienvenue dans le clone Pokemon AI (C++20)\n";
+    std::cout << "==========================================\n\n";
 
-    // Initialisation du système de jeu
-    // Nous ajouterons la logique de combat et les données des Pokémon ici.
+    // Création d'un Pokémon de base
+    Pokemon starter("Pikachu", 5, 20, 15, 10);
+    
+    starter.displayStats();
+    std::cout << "\n";
+    
+    // Test des méthodes
+    starter.takeDamage(5);
+    starter.heal(2);
+    starter.displayStats();
 
     return 0;
 }
